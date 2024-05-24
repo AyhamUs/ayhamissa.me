@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayham Issa - Website Not Open for Public Access</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .logo {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .logo img {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .logo span {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ayham Issa</h1>
+        <p>Welcome to <strong>ayhamissa.me</strong>. This website is owned by Ayham Issa and is currently not open for public access.</p>
+        <p>Please check back later for updates.</p>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Cloudflare_Logo.png" alt="Cloudflare Logo">
+            <span>DDoS Protection by Cloudflare</span>
+        </div>
+        <div class="footer" id="date-time">
+            <!-- Date and Time will be injected here by JavaScript -->
+        </div>
+    </div>
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('date-time');
+            const now = new Date();
+            const formattedDateTime = now.toLocaleString('en-US', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true
+            });
+            dateTimeElement.textContent = `Current date and time: ${formattedDateTime}`;
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
+</body>
+</html>
