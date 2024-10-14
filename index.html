@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Introduction Animation</title>
+    <style>
+        /* Reset default margins */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000; /* Change to your theme color */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Intro container */
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            animation: fadeOut 1s ease-out 5s forwards;
+        }
+
+        /* Logo animation */
+        .logo-container {
+            opacity: 0;
+            animation: fadeInLogo 1.5s ease-out forwards 0.5s;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Tagline animation */
+        .tagline {
+            color: #fff;
+            font-size: 2rem;
+            opacity: 0;
+            animation: fadeInText 2s ease-out forwards 2s;
+        }
+
+        /* Loading bar animation */
+        .loading-bar {
+            width: 0;
+            height: 5px;
+            background-color: #ff0000; /* Change to your preferred color */
+            margin-top: 20px;
+            animation: loadBar 3s ease-out forwards 3s;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeInLogo {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes loadBar {
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Introduction Section -->
+    <div class="intro">
+        <div class="logo-container">
+            <!-- Add your logo here -->
+            <img src="your-logo.png" alt="Logo" class="logo">
+        </div>
+        <h1 class="tagline">Welcome to [Your Website]</h1>
+        <div class="loading-bar"></div>
+    </div>
+
+    <!-- Main content (initially hidden) -->
+    <div id="main-content" style="display: none; text-align: center; color: white;">
+        <h1>Main Content of the Website</h1>
+        <p>Your website content will load here after the intro animation.</p>
+    </div>
+
+    <script>
+        // Hide the intro and display main content after the animation
+        setTimeout(() => {
+            document.querySelector('.intro').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 6000); // 6 seconds for full animation
+    </script>
+
+</body>
+</html>
